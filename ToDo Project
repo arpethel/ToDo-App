@@ -1,0 +1,52 @@
+# Step 1: Integrate Basic Theme to Asset Pipeline
+# Step 2: Allow people to CRUD lists
+
+/ see stubbed out, non-dynamic, page with theme
+
+
+# Step 3: 
+# Step 4: 
+# Step 5: 
+# Step 6: 
+# Step 7: 
+# Step 8:
+# Step 9:
+# Step 10:
+
+
+create lists
+see lists
+show lists 
+
+
+
+
+
+
+
+
+
+
+add items
+navigate many lists and see each lists items
+
+lists
+    has many items
+
+items
+    belongs to a list
+
+
+
+
+
+
+### Steps to making this app
+
+cd into the root directory
+run bundle install
+find styling sheet and use within asset pipeline
+set up routes to clear default page
+
+*if the css file you created is not working, remove the //= require_tree ./channels from line 6 of your app/assests/javascripts/cable.js file to resolve the issue
+
