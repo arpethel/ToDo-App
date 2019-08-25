@@ -1914,3 +1914,641 @@ Processing by ListsController#show as HTML
 Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddStatusToItems (20190825213321)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "items" ADD "status" integer[0m
+  ↳ db/migrate/20190825213321_add_status_to_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190825213321"]]
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/lists/4" for ::1 at 2019-08-25 17:35:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 4]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 320ms (Views: 275.7ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["list_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddStatusToItems (20190825213321)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aitems" ("id" integer NOT NULL PRIMARY KEY, "description" varchar DEFAULT NULL, "list_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "status" integer DEFAULT NULL)[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aitems" ("id","description","list_id","created_at","updated_at","status")
+                     SELECT "id","description","list_id","created_at","updated_at","status" FROM "items"[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "items"[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer NOT NULL PRIMARY KEY, "description" varchar DEFAULT NULL, "list_id" integer DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "items" ("id","description","list_id","created_at","updated_at")
+                     SELECT "id","description","list_id","created_at","updated_at" FROM "aitems"[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aitems"[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190825213321"]]
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddStatusToItems (20190825213321)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "items" ADD "status" integer DEFAULT 0[0m
+  ↳ db/migrate/20190825213321_add_status_to_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190825213321"]]
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["list_id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["list_id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."list_id" = ? ORDER BY "items"."id" ASC LIMIT ?[0m  [["list_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Update (0.5ms)[0m  [1m[33mUPDATE "items" SET "updated_at" = ?, "status" = ? WHERE "items"."id" = ?[0m  [["updated_at", "2019-08-25 21:45:46.168364"], ["status", 1], ["id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/lists/4" for ::1 at 2019-08-25 17:47:16 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 4]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 28.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/lists/4" for ::1 at 2019-08-25 17:48:08 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (42.8ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+				<div class="view">
+				            ^~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+				<input class="toggle" type="checkbox">
+				              ^~~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t class="toggle" type="checkbox">
+...                       ^~~~~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+	<footer class="footer" style="display: none;">
+	               ^~~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+...r class="footer" style="display: none;">
+...                        ^~~~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+		<span class="todo-count"><strong>0</strong> it...
+		             ^~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:26: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+		<span class="todo-count"><strong>0</strong> items lef...
+		                       ^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+		<ul class="filters">
+		           ^~~~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:30: syntax error, unexpected '<', expecting ')'
+			</li>
+			^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:32: unknown regexp options - actv
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:32: syntax error, unexpected tSTRING_BEG, expecting ')'
+				<a href="#/active">Active</a>
+				                 ^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:36: syntax error, unexpected '<', expecting ')'
+			</li>
+			^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:37: unknown regexp option - l
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:38: syntax error, unexpected '<'
+		<button class="clear-completed...
+		^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+...n class="clear-completed" style="display: none;"></button>
+...                          ^~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:38: syntax error, unexpected '<'
+...leted" style="display: none;"></button>
+...                              ^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:39: unknown regexp options - ftr
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:40: syntax error, unexpected '<'
+</section>'.freeze;
+^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:44: unterminated regexp meets end of file
+          end
+             ^
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:44: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/lists/show.html.erb:17: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:18: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:25: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:26: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:26: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/lists/show.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:30: syntax error, unexpected '<', expecting ')'
+app/views/lists/show.html.erb:32: unknown regexp options - actv
+app/views/lists/show.html.erb:32: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/lists/show.html.erb:36: syntax error, unexpected '<', expecting ')'
+app/views/lists/show.html.erb:37: unknown regexp option - l
+app/views/lists/show.html.erb:38: syntax error, unexpected '<'
+app/views/lists/show.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/lists/show.html.erb:38: syntax error, unexpected '<'
+app/views/lists/show.html.erb:39: unknown regexp options - ftr
+app/views/lists/show.html.erb:40: syntax error, unexpected '<'
+app/views/lists/show.html.erb:44: unterminated regexp meets end of file
+app/views/lists/show.html.erb:44: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/lists/4" for ::1 at 2019-08-25 17:51:38 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 4]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-08-25 17:51:48 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/1" for ::1 at 2019-08-25 17:51:49 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 1]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 33.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 17:51:52 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 17:53:49 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 38ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 17:56:44 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 48ms (Views: 43.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-08-25 17:56:51 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-08-25 18:01:34 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 85ms (Views: 81.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:01:36 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:01:38 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:01:53 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:02:35 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:11:35 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"items", :id=>nil, :list_id=>"2"}, missing required keys: [:id]):
+    15: 			<% @list.items.each do |item| %>
+    16: 				<li class="<%="completed" if item.complete? %>">
+    17: 				<div class="view">
+    18: 					<%= form_for([@list, item], :url => list_item_path(@list, item)) do |f| %>
+    19: 						<input class="toggle" type="checkbox" <%= "checked='checked'" if item.complete? %> >
+    20: 					<% end %>
+    21: 				<label><%= item.description %></label>
+  
+app/views/lists/show.html.erb:18:in `block in _app_views_lists_show_html_erb__1614072331576833448_70103105438520'
+app/views/lists/show.html.erb:15:in `_app_views_lists_show_html_erb__1614072331576833448_70103105438520'
+Started GET "/lists/2" for ::1 at 2019-08-25 18:12:55 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:19:35 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 53ms (Views: 33.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:24:32 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  Rendered lists/show.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.2ms)
+
+
+  
+SyntaxError (/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;					 end 
+         					 ^~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;			 end 
+         			 ^~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/views/lists/show.html.erb:46: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/lists/show.html.erb:20: syntax error, unexpected keyword_end, expecting ')'
+app/views/lists/show.html.erb:24: syntax error, unexpected keyword_end, expecting ')'
+app/views/lists/show.html.erb:44: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/lists/show.html.erb:46: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/lists/2" for ::1 at 2019-08-25 18:25:24 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (118.0ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `checkbox' for #<ActionView::Helpers::FormBuilder:0x00007f8446691438>
+Did you mean?  check_box):
+    16: 			<li class="<%="completed" if item.complete? %>">
+    17: 				<div class="view">
+    18: 					<%= form_for([@list, item]) do |f| %>
+    19: 						<%= f.checkbox :status, :class => "toggle", :checked => (true if item.complete?) %>
+    20: 					<% end %>
+    21: 					<label><%= item.description %></label>
+    22: 				</div>
+  
+app/views/lists/show.html.erb:19:in `block (2 levels) in _app_views_lists_show_html_erb__1614072331576833448_70103047113500'
+app/views/lists/show.html.erb:18:in `block in _app_views_lists_show_html_erb__1614072331576833448_70103047113500'
+app/views/lists/show.html.erb:15:in `_app_views_lists_show_html_erb__1614072331576833448_70103047113500'
+Started GET "/lists/2" for ::1 at 2019-08-25 18:26:25 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 90ms (Views: 85.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/lists/2" for ::1 at 2019-08-25 18:30:34 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:5:3: reserved word 'function'):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+(execjs):7539:8
+(execjs):7545:14
+(execjs):1:40
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__2947635080960181129_70103042151860'
+Started GET "/lists/2" for ::1 at 2019-08-25 18:43:50 -0400
+Processing by ListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT  "lists".* FROM "lists" WHERE "lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:8
+  Rendering lists/show.html.erb within layouts/application
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."list_id" = ?[0m  [["list_id", 2]]
+  ↳ app/views/lists/show.html.erb:15
+  Rendered lists/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/config
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/stylesheets
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activestorage-5.2.3/app/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__2947635080960181129_70103067642820'
+Started GET "/" for ::1 at 2019-08-25 18:44:02 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery' with type 'application/javascript'
+Checked in these paths: 
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/config
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/stylesheets
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activestorage-5.2.3/app/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__2947635080960181129_70103046936300'
+Started GET "/" for ::1 at 2019-08-25 18:44:48 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'jquery_ujs' with type 'application/javascript'
+Checked in these paths: 
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/config
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/stylesheets
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activestorage-5.2.3/app/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__2947635080960181129_70103051098760'
+Started GET "/" for ::1 at 2019-08-25 18:44:59 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'list' with type 'application/javascript'
+Checked in these paths: 
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/config
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/stylesheets
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activestorage-5.2.3/app/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__2947635080960181129_70103100167760'
+Started GET "/" for ::1 at 2019-08-25 18:45:07 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (couldn't find file 'list.js' with type 'application/javascript'
+Checked in these paths: 
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/config
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/app/assets/stylesheets
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actioncable-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/activestorage-5.2.3/app/assets/javascripts
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/ryanpethel/.rvm/gems/ruby-2.5.1/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/ryanpethel/Projects/ToDo-App/todo_app/todo-mvc/node_modules):
+     6:     <%= csp_meta_tag %>
+     7: 
+     8:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     9:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    10:   </head>
+    11: 
+    12:   <body>
+  
+app/assets/javascripts/application.js:16
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__2947635080960181129_70103043243600'
+Started GET "/" for ::1 at 2019-08-25 18:45:14 -0400
+Processing by ListsController#index as HTML
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  ↳ app/views/lists/index.html.erb:13
+  Rendered lists/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 0.1ms)
+
+
