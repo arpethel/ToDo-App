@@ -1,7 +1,11 @@
 <section class="todoapp">
 			<header class="header">
 				<h1>todos</h1>
-				<input class="new-todo" placeholder="What needs to be done?" autofocus="">
+				<form>
+                <%= form_for(@list) do |f| %>
+                  <%= f.text_field :name, :class => "new-todo" %>
+                <% end %>
+                </form>
 			</header>
 			<section class="main">
 				<input id="toggle-all" class="toggle-all" type="checkbox">
