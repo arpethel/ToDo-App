@@ -1,0 +1,11 @@
+I"Ô(function() {
+  $(function() {
+    console.log('afasd');
+    $('input.toggle').on('change', function() {
+      console.log('hello');
+      $(this).parents('form').trigger('submit');
+    });
+  });
+
+}).call(this);
+:ET

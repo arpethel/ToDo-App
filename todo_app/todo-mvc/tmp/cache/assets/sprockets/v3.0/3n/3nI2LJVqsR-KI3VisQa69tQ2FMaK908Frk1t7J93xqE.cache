@@ -1,0 +1,10 @@
+I"º(function() {
+  $(function() {
+    $('input.toggle').on('change', function() {
+      console.log('hello');
+      $(this).parents('form').trigger('submit');
+    });
+  });
+
+}).call(this);
+:ET
